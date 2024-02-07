@@ -20,8 +20,8 @@ export default function App() {
   return (
     <div className="">
       <Board />
-      <History />
-      <Game />
+      {/* <History />
+      <Game /> */}
     </div>
   );
 }
