@@ -2,13 +2,13 @@ import { useState } from "react";
 import Square from "./Square";
 
 export default function Board() {
-  const [squares, setSquares] = useState([Array(9).fill(null)]);
+  const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   function handClick(i) {
-    // if (squares[i]) {
-    //   console.log(squares[i]);
-    //   return;
-    // }
+    if (squares[i]) {
+      console.log("clicked!");
+      return;
+    }
 
     const nextSquares = squares.slice();
     if (xIsNext) {
@@ -20,6 +20,7 @@ export default function Board() {
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
   }
+  console.log(squares);
   return (
     <>
       <div className="flex">
