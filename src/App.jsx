@@ -8,14 +8,14 @@
 
 // import Square from "./Square";
 // import Board from "./Board";
-import History from "./History";
-// import Game from "./Game";
+// import History from "./History";
+import Game from "./Game";
 export default function App() {
   return (
     <div className="">
       {/* <Board /> */}
-      <History />
-      {/* <Game /> */}
+      {/* <History /> */}
+      <Game />
     </div>
   );
 }
