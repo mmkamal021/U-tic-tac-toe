@@ -1,7 +1,6 @@
 // eslint-disable-next-line react/prop-types
 
 export default function Square({ value, onSqureClick }) {
-  console.log(value, onSqureClick);
   return (
     <>
       <button

@@ -1,10 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Square from "./Square";
+// import History from "./History";
 
-export default function Board() {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState(true);
-
+// eslint-disable-next-line react/prop-types
+export default function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
 
@@ -20,17 +19,16 @@ export default function Board() {
       return;
     }
 
+    // eslint-disable-next-line react/prop-types
     const nextSquares = squares.slice();
     if (xIsNext) {
       nextSquares[i] = "X";
     } else {
       nextSquares[i] = "O";
     }
-
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   }
-  console.log(squares);
+
   return (
     <>
       <div>{status}</div>
